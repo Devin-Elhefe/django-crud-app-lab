@@ -1,0 +1,55 @@
+.card-container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 275px;
+    margin: 10px;
+    border: var(--borders);
+    box-shadow: var(--card-box-shadow);
+  }
+  
+  .card-content {
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .usr-img {
+    width: 100%;
+    border-radius: var(--card-border-radius);
+  }
+  
+  .card > a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  .card h2 {
+    margin: 10px 0;
+    font-size: var(--font-xl);
+  }
+  
+  .card p {
+    margin: 5px 0;
+    font-size: var(--font-reg);
+  }
+
+  .header-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Adjust to your desired max width */
+    height: auto;
+    margin: auto;
+    padding: 10px 0; /* Some vertical padding for spacing */
+  }
+  
+  /* Logo Image */
+  .header-logo-container img {
+    max-width: 100%; /* Constrain the image to the width of the container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove any inline display issues */
+  }

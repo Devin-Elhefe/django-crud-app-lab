@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/courses/course-index.css' %}">
+{% endblock head %}
+    
+
+
+
+<section class='page-header'>
+    <h1>Golf Courses</h1>
+    <img src="{% static 'images/Augusta.png' %}" alt="Augusta National">
+    <img src="{% static 'images/Emirates Golf Club.png' %}" alt="Emirates Golf Club">
+    <img src="{% static 'images/Pebble Beach.png' %}" alt="Pebble Beach">
+    <img src="{% static 'images/TPC Sawgrass.png' %}" alt="TPC Sawgrass">
+</section>
+
+<section class='card-container'>
+    
+    {% for course in courses  %}
+        <div class='card'>
+            <div class='card-img-container'>
+                {% comment %} <img src="{% static 'images/golfheader.webp' %}" alt="Golf Logo"> {% endcomment %}
+            </div>
+            <h2 class='card-title'>{{ course.name }}</h2>
+
+            <p><small>{{ course.description }}</small></p>
+                
+        </div>
+    {% endfor %}
+        
+
+</section>
+
+{% endblock content %}
