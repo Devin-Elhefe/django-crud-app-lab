@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/courses/course-index.css' %}">
+{% endblock head %}
+
+{% block content %}
+    
+
+<section class='card-container'>
+    
+    {% for course in courses  %}
+        <div class='card'>
+            <a href="{% url 'golfcourse-detail' course.id %}">
+                <div class="card-img-container">
+                    {% if course.image %}
+                        <img src="{{ course.image.url }}" alt="{{ course.name }}">
+                    {% else %}
+                        <img src="{% static 'images/golfheader-logo.webp' %}" alt="Default Image"> 
+                    {% endif %}
+                </div>
+            <h2 class='card-title'>{{ course.name }}</h2>
+
+            <p><small>{{ course.description }}</small></p>
+                
+        </div>
+    </a>
+    {% endfor %}
+        
+
+</section>
+
+{% endblock content %}

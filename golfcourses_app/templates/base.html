@@ -14,18 +14,16 @@
   </head>
   <body>
     <header>
-      <div class="header-logo-container">
-        <a href="/">
-          <img src="{% static 'images/golfheader-logo.webp' %}" alt="Golf Logo" />
-        </a>
-      </div>
-      <nav>
-        <ul>
-            <li><a href="/courses">All Golf Courses</a></li>  
-            <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
-    </header>
+        <div class="header-logo-container">
+          <a href="{% url 'home' %}">Home</a> <!-- Add Home link here -->
+        </div>
+        <nav>
+          <ul>
+              <li><a href="{% url 'courses-index' %}">All Golf Courses</a></li>  
+              <li><a href="{% url 'about' %}">About</a></li>
+          </ul>
+        </nav>
+      </header>
     <main>
      {% block content %} 
      {% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/courses/golfcourse-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="golfcourse-container">
+  <div class="golf-img">
+    {% if golf.image %}
+      <img src="{{ golf.image.url }}" alt="{{ golf.name }}">
+    {% else %}
+      <img src="{% static 'images/golfheader-logo.webp' %}" alt="Default Image">
+    {% endif %}
+  </div>
+  <div class="golfcourse-details">
+    <h1>{{ golf.name }}</h1>
+    <p>{{ golf.description }}</p>
+  </div>
+</section>
+{% endblock %}
