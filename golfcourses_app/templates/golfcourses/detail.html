@@ -15,6 +15,30 @@
   <div class="golfcourse-details">
     <h1>{{ golf.name }}</h1>
     <p>{{ golf.description }}</p>
+    <div class="golf-actions">
+      <a href="{% url 'course-update' golf.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'course-delete' golf.id %}" class="btn danger">Delete</a>
+    </div>
+    <div class="snack-box">
+      <h2>Snacks</h2>
+      {% if snacks %}
+        <ul>
+          {% for snack in snacks %}
+            <li>{{ snack.get_snacks_display }} on {{ snack.date }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No snacks available for this course.</p>
+      {% endif %}
+  </div>
+  <div class="snack-form">
+    <h3>Add a Snack</h3>
+    <form action="{% url 'add-golfsnacks' golf.id %}" method="post">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }} 
+      <button type="submit" class="btn">Add Snack</button>
+    </form>
   </div>
 </section>
 {% endblock %}
